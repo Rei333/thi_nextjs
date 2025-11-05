@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+	--breakpoint-tab: 768px;
+	--breakpoint-desk: 1000px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+	--background: #F4EEE5;
+	--foreground: #8A3121;
+}
+
+.dark {
+	--background: #d6bd99;
+	--foreground: #6e2b1f;
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-manrope);
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: inherit;
+	font-family: var(--font-goudy);
+	line-height: 100%;
+}
+
+h1 {
+	font-size: 93px;
+}
+
+h2 {
+	font-size: 58px;
+}
+
+h3 {
+	font-size: 42px;
+}
+
+h4 {
+	font-size: 28px;
+}
+
+h5, h6 {
+	font-size: 20px;
+}
+
+header nav {
+	display: flex;
+}
+
+@media (max-width: 1000px) {
+	header nav {
+		display: none;
+	}
+
+	header nav.open {
+		position: absolute;
+		top: 65px;
+		left: -10%;
+		right: -10%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+		background: var(--background);
+		width: 120%;
+		padding: 40px 0;
+	}
+}
+
+.container {
+	padding: 70px 5% 0;
+	overflow-x: hidden;
+}
+
+.section80, .section104 {
+	display: flex;
+	flex-direction: column;
+	max-width: 1152px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section80 {
+	padding: 80px 0;
+}
+
+.section104 {
+	padding: 104px 0;
+}
+
+.surtitre {
+	font-size: 12px;
+}
+
+@layer components {
+	.btn {
+		@apply inline-flex items-center justify-center rounded-full w-fit px-5 py-2 font-semibold cursor-pointer transition;
+	}
+
+	.primary {
+		background: linear-gradient(to top, var(--background) 50%, var(--foreground) 50%);
+		background-size: 100% 200%;
+		background-position: top;
+		color: var(--background);
+		border: solid var(--foreground) 2px;
+		transition: all 0.3s ease-out;
+	}
+
+	.primary:hover {
+		background-position: bottom;
+		color: var(--foreground);
+	}
+
+	.secondary {
+		@apply border border-[var(--foreground)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)];
+	}
+}
