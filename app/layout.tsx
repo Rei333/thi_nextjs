@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 
 // Polices locales
 const manrope = localFont({
@@ -29,7 +30,10 @@ export default function RootLayout({
 		<html lang="fr" className={`${manrope.variable} ${goudy.variable}`}>
 			<body className="antialiased">
 				<Header />
-				<main className="container">{children}</main>
+				<main className="container">
+					<Reveal />
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>

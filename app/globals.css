@@ -13,11 +13,13 @@
 :root {
 	--background: #F4EEE5;
 	--foreground: #8A3121;
+	--backgroundDark: #EDE3D4;
 }
 
 .dark {
 	--background: #d6bd99;
 	--foreground: #6e2b1f;
+	--backgroundDark: #bda277;
 }
 
 body {
@@ -78,6 +80,7 @@ header nav {
 }
 
 .container {
+	margin: 0 auto;
 	padding: 70px 5% 0;
 	overflow-x: hidden;
 }
@@ -102,26 +105,54 @@ header nav {
 	font-size: 12px;
 }
 
+@layer base {
+	input:not([type="submit"]), textarea, select {
+		@apply w-full border-b border-b-[var(--foreground)] bg-transparent py-2 focus:border-[var(--foreground)] transition;
+	}
+
+	label {
+		font-weight: 700;
+	}
+}
+
+
 @layer components {
-	.btn {
+	.btn, input[type="submit"] {
 		@apply inline-flex items-center justify-center rounded-full w-fit px-5 py-2 font-semibold cursor-pointer transition;
 	}
 
-	.primary {
+	.primary, input[type="submit"] {
 		background: linear-gradient(to top, var(--background) 50%, var(--foreground) 50%);
-		background-size: 100% 200%;
-		background-position: top;
 		color: var(--background);
 		border: solid var(--foreground) 2px;
-		transition: all 0.3s ease-out;
 	}
 
-	.primary:hover {
-		background-position: bottom;
+	.primary:hover, input[type="submit"]:hover {
 		color: var(--foreground);
 	}
 
 	.secondary {
-		@apply border border-[var(--foreground)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)];
+		background: linear-gradient(to top, var(--foreground) 50%, var(--background) 50%);
+		color: var(--foreground);
+		border: solid var(--foreground) 2px;
 	}
+
+	.secondary:hover {
+		color: var(--background);
+	}
+
+	.primary, .secondary, input[type="submit"] {
+		background-size: 100% 200%;
+		background-position: top;
+		transition: all 0.3s ease-out;
+	}
+
+	.primary:hover, .secondary:hover, input[type="submit"]:hover {
+		background-position: bottom;
+	}
+}
+
+@layer utilities {
+	.reveal { @apply opacity-0 transition-opacity duration-700; }
+	.reveal.is_visible { @apply opacity-100; }
 }

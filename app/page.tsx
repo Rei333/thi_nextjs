@@ -23,9 +23,33 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="flex justify-center h-[700px] pt-[40px]">
+				<div className="flex justify-center pt-[40px]">
 					<PictureAnim img="/home_hero.jpg" alt="Pâtisserie Créative"/>
 				</div>
+			</section>
+
+			<section className="reveal section104 flex !flex-row justify-between items-center gap-[80px]">
+				<div className="flex flex-col w-[50%]">
+					<h2 className="mb-[24px]">Notre pâtissière en chef</h2>
+
+					<p className="mb-[40px]">Formée chez Lenôtre, Thi a longtemps évolué dans l’univers exigeant de la haute pâtisserie française.<br/><br/>
+					Elle y apprend la rigueur, la précision du geste, le goût du détail. Mais avec le temps, elle sent que ce qui lui avait fait aimer ce métier lui échappe.<br/><br/>
+					Tout bascule lors d’une pause professionnelle au Vietnam. Là-bas, au contact des gens et des saveurs, elle retrouve ce qui comptait vraiment : le partage, la gourmandise, la sincérité.<br/><br/>
+					C’est de là qu’est née THI : une pâtisserie créative à la croisée de deux cultures.<br/><br/>
+					Un lieu de vie à son image.<br/><br/>
+					Subtile, généreuse et sincère.</p>
+
+					<button className="btn primary">Voir la carte</button>
+				</div>
+				<Image src="/home_section.png" alt="Notre pâtissière" width={500} height={575} />
+			</section>
+
+			<section className="reveal delay-500 section104 flex !flex-row justify-between items-center gap-[80px]">
+				<div className="flex flex-col w-[50%]">
+					<h2 className="mb-[24px]">Reveal fade in 500ms</h2>
+					<p>Reveal fade in 500ms</p>
+				</div>
+				<Image src="/home_section.png" alt="Notre pâtissière" width={500} height={575} />
 			</section>
 		</>
 	);
