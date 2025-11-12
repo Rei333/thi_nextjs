@@ -6,7 +6,6 @@ export default function RevealOnScroll() {
     const pathname = usePathname();
 
     useEffect(() => {
-        const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
         const io = new IntersectionObserver((entries) => {
             entries.forEach((e) => {
                 if (e.isIntersecting) {
@@ -16,8 +15,20 @@ export default function RevealOnScroll() {
             });
         }, { threshold: 0.15 });
 
-        els.forEach((el) => io.observe(el));
-        return () => io.disconnect();
-    }, [[pathname]]);
+        const observeAll = () => {
+            document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => io.observe(el));
+        };
+
+        observeAll();
+
+        const mo = new MutationObserver(observeAll);
+        mo.observe(document.body, { childList: true, subtree: true });
+
+        return () => {
+            io.disconnect();
+            mo.disconnect();
+        };
+    }, [pathname]);
+
     return null;
 }

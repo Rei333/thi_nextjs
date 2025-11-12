@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { data: session, status } = useSession();
 
     return (
         <header className="fixed top-0 left-0 z-50 bg-[var(--background)] w-full border-b border-b-[var(--foreground)] px-[5%]">
@@ -27,6 +29,7 @@ export default function Header() {
                         <Link href="/partenaires" className="hover:underline">Nos partenaires</Link>
                         <Link href="#nous-trouver" className="hover:underline">Où nous trouver</Link>
                         <button className="btn primary">Voir la carte</button>
+                        <Link href={session ? "/logout" : "/login"}><button className="btn secondary mt-[-15px] desk:mt-0 desk:ml-[-30px]">{session ? "Déconnexion" : "Connexion"}</button></Link>
                     </nav>
                     <ThemeToggle />
                 </div>

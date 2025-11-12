@@ -17,10 +17,11 @@ export default async function Partenaires() {
     return (
         <section className="section104 gap-[40px]">
             <h1 className="text-center">Nos partenaires</h1>
+            <h2>Nos partenaires locaux pour de meilleurs produits</h2>
             <div>
                 {datas.map((data: Partner) => (
-                    <div key={data.id} >
-                        <h2>{data.username}</h2>
+                    <div key={data.id} className="mb-[8px]">
+                        <h3>{data.username.replace(/([A-Z])/g, ' $1').trim()}</h3>
                     </div>
                 ))}
             </div>

@@ -20,7 +20,7 @@ export default async function Evenementiel() {
 
                 <CardEvent datas={events ?? []} />
 			</section>
-            <section className="section80 items-center gap-[16px]">
+            <section className="reveal delay-100 section80 items-center gap-[16px]">
                 <h2>Ajouter un nouvel évènement</h2>
                 <span className="text-center">Votre évènement n'est pas encore répertorié sur notre site ?<br />
                 Vous pouvez l'ajouter en cliquant sur ce lien : <Link href="/evenementiel/create" className="underline">Ajouter mon évènement</Link>.</span>

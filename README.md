@@ -39,13 +39,21 @@ cp template.env .env.local
 1) Créer un projet Supabase
 
 - Allez sur app.supabase.com -> *New project*
-- Récupérez le *Project URL* et *API Key* et ajoutez-les au fichier .env.local
+- Récupérez le **Project URL** et **API Key** et ajoutez-les au fichier .env.local
 - Récuppérez le *service_role* dans *Project Settings* > *API Keys* et ajoutez-la au fichier .env.local
 
 2) Ajouter la structure et les données du projet
 
 - Dans Supabase -> *SQL Editor*
 - Collez le contenu du fichier db.sql et exécutez le script
+
+## Configurer l'authentification avec Google
+1) Créer un ID client 0Auth
+
+- Allez sur Google Cloud et sur l'onglet *Identifiants*
+- Cliquez sur *Créer des identifiants* > *ID client 0Auth*
+- Suivez les étapes puis *Créer un client OAuth* et remplissez les informations du projet
+- Récupérez le **ID client** et le **Code secret du client** et ajoutez-les au .env.local
 
 ## Lancer le serveur de développement
 
