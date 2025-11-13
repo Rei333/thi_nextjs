@@ -55,6 +55,9 @@ cp template.env .env.local
 - Suivez les étapes puis *Créer un client OAuth* et remplissez les informations du projet
 - Récupérez le **ID client** et le **Code secret du client** et ajoutez-les au .env.local
 
+## Ajouter le NEXTAUTH_SECRET
+Générez votre secret ici : https://generate-secret.vercel.app/32 et ajoutez-le au fichier .env.local
+
 ## Lancer le serveur de développement
 
 ```bash

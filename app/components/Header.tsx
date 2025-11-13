@@ -27,7 +27,7 @@ export default function Header() {
                     <nav className={`${menuOpen ? "open" : ""} gap-10 items-center font-semibold underline-offset-8`}>
                         <Link href="/evenementiel" className="hover:underline">Évènementiel</Link>
                         <Link href="/partenaires" className="hover:underline">Nos partenaires</Link>
-                        <Link href="#nous-trouver" className="hover:underline">Où nous trouver</Link>
+                        <Link href="/nos-boutiques" className="hover:underline">Où nous trouver</Link>
                         <button className="btn primary">Voir la carte</button>
                         <Link href={session ? "/logout" : "/login"}><button className="btn secondary mt-[-15px] desk:mt-0 desk:ml-[-30px]">{session ? "Déconnexion" : "Connexion"}</button></Link>
                     </nav>
