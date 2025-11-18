@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Store from "./Store";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
 	title: "Nos boutiques — THI",
 	description: "Partout en France, retrouvez le meilleur des pâtisseries chez THI Pâtisserie",

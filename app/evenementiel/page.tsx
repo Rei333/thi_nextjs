@@ -3,6 +3,8 @@ import {supabaseServer} from "@/supabase/supabaseServer";
 import CardEvent from "./CardEvent";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
 	title: "Évènementiel — THI",
 	description: "Découvrez nos pâtisseries fines et audacieuses à Muret.",
