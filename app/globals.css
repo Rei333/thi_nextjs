@@ -105,6 +105,16 @@ header nav {
 	font-size: 12px;
 }
 
+.city_form {
+	display: none;
+}
+
+.center_in_absolute {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 @layer base {
 	input:not([type="submit"]), textarea, select {
 		@apply w-full border-b border-b-[var(--foreground)] bg-transparent py-2 focus:border-[var(--foreground)] transition;
@@ -115,7 +125,6 @@ header nav {
 	}
 }
 
-
 @layer components {
 	.btn, input[type="submit"] {
 		@apply inline-flex items-center justify-center rounded-full w-fit px-5 py-2 font-semibold cursor-pointer transition;
@@ -125,6 +134,13 @@ header nav {
 		background: linear-gradient(to top, var(--background) 50%, var(--foreground) 50%);
 		color: var(--background);
 		border: solid var(--foreground) 2px;
+	}
+
+	.btn:disabled, input[type="submit"]:disabled {
+		background: initial !important;
+		color: initial !important;
+		cursor: not-allowed;
+		filter: grayscale(100%);
 	}
 
 	.primary:hover, input[type="submit"]:hover {
